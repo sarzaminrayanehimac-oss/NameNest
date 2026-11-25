@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نام‌یاب | پیشنهاد اسم برای فرزندتان</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0820;--c1:#7c5cff;--c2:#ff5c9d;--c3:#35e0c2;--tx:#f3f0ff;--glass:rgba(255,255,255,.08);--bd:rgba(255,255,255,.18)}
+*{box-sizing:border-box;margin:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden}
+#bgimg{position:fixed;inset:0;background-size:cover;background-position:center;opacity:.35;z-index:-3}
+#cv{position:fixed;inset:0;z-index:-2}
+.blob{position:fixed;width:46vmax;height:46vmax;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1;animation:fl 18s ease-in-out infinite alternate}
+.b1{background:var(--c1);top:-15vmax;right:-10vmax}.b2{background:var(--c2);bottom:-18vmax;left:-12vmax;animation-delay:-6s}
+@keyframes fl{to{transform:translate(8vmax,6vmax) scale(1.2)}}
+header{text-align:center;padding:48px 16px 18px;perspective:800px}
+h1{font-size:clamp(2.2rem,7vw,4.2rem);font-weight:800;background:linear-gradient(90deg,var(--c3),var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;animation:sp 9s ease-in-out infinite alternate;text-shadow:0 0 40px #7c5cff55}
+@keyframes sp{from{transform:rotateY(-14deg)}to{transform:rotateY(14deg)}}
+header p{opacity:.8;margin-top:8px}
+.panel{max-width:1100px;margin:14px auto;padding:20px;background:var(--glass);border:1px solid var(--bd);border-radius:24px;backdrop-filter:blur(16px);box-shadow:0 20px 60px #0008}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:9px 0}
+.row b{min-width:92px;font-weight:500;opacity:.85}
+.chip{padding:7px 15px;border-radius:99px;border:1px solid var(--bd);background:#ffffff0d;color:var(--tx);cursor:pointer;font:inherit;transition:.25s}
+.chip:hover{transform:translateY(-2px);background:#ffffff22}
+.chip.on{background:linear-gradient(135deg,var(--c1),var(--c2));border-color:transparent;box-shadow:0 6px 20px #7c5cff66}
+input[type=text]{background:#ffffff14;border:1px solid var(--bd);border-radius:12px;color:var(--tx);padding:8px 12px;font:inherit;width:90px;text-align:center}
+.act{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.big{flex:1;min-width:150px;padding:13px;border-radius:16px;border:0;font:inherit;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--c1),var(--c2));transition:.25s}
+.big.alt{background:linear-gradient(135deg,#1fb8a0,#2b7fff)}
+.big:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 30px #ff5c9d55}
+#grid{max-width:1100px;margin:20px auto 60px;padding:0 14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;perspective:1000px}
+.card{position:relative;padding:20px;border-radius:22px;background:var(--glass);border:1px solid var(--bd);backdrop-filter:blur(12px);cursor:pointer;transform-style:preserve-3d;transition:transform .15s,box-shadow .3s;animation:in .6s both}
+@keyframes in{from{opacity:0;transform:translateY(40px) rotateX(-25deg)}}
+.card:hover{box-shadow:0 25px 50px #0009,0 0 30px #7c5cff55}
+.card h3{font-size:1.7rem;transform:translateZ(40px)}
+.card small{opacity:.75;display:block;margin:4px 0 10px;transform:translateZ(20px)}
+.tag{display:inline-block;font-size:.72rem;padding:2px 9px;border-radius:9px;background:#ffffff1c;margin:2px 0 2px 4px}
+.f{border-top:3px solid var(--c2)}.m{border-top:3px solid var(--c3)}
+.bar{height:7px;border-radius:9px;background:#ffffff1f;overflow:hidden;margin-top:10px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--c3),var(--c2));border-radius:9px;transition:width 1s}
+#md{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:9;padding:14px;backdrop-filter:blur(6px)}
+#md.show{display:flex}
+.box{max-width:520px;width:100%;max-height:90vh;overflow:auto;padding:26px;border-radius:26px;background:linear-gradient(160deg,#241b5a,#14102f);border:1px solid var(--bd);animation:pop .5s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.6) rotateY(90deg);opacity:0}}
+.box h2{font-size:2.4rem;text-align:center}
+.box p{margin:10px 0;line-height:1.9}
+.box a{color:var(--c3);margin-left:12px;font-size:.9rem}
+#wk{font-size:.9rem;opacity:.85;border-top:1px dashed var(--bd);padding-top:8px}
+#mus{position:fixed;bottom:16px;left:16px;z-index:5;width:50px;height:50px;border-radius:50%;font-size:1.3rem;padding:0}
+.note{max-width:1100px;margin:0 auto 40px;padding:0 16px;font-size:.8rem;opacity:.6;text-align:center;line-height:1.9}
+</style>
+</head>
+<body>
+<div id="bgimg"></div><canvas id="cv"></canvas><div class="blob b1"></div><div class="blob b2"></div>
+<header><h1>✨ نام‌یاب ✨</h1><p>اسمی که لایقِ فرزندتان است؛ با معیارهای شما پیدا کنید</p></header>
+
+<section class="panel">
+ <div class="row"><b>جنسیت</b><span id="fg"></span></div>
+ <div class="row"><b>ریشه</b><span id="fo"></span></div>
+ <div class="row"><b>سبک و دوره</b><span id="fe"></span></div>
+ <div class="row"><b>مفهوم</b><span id="ft"></span></div>
+ <div class="row"><b>میزان رایج بودن</b><span id="fp"></span></div>
+ <div class="row"><b>روند محبوبیت</b><span id="fr"></span></div>
+ <div class="row"><b>حرف اول</b><input type="text" id="lt" maxlength="1" placeholder="مثلاً آ"> <b style="min-width:auto">طول اسم</b><span id="fl"></span></div>
+ <div class="act">
+  <button class="big" id="rnd">🎲 یک پیشنهاد شانسی</button>
+  <button class="big alt" id="favb">❤️ علاقه‌مندی‌های من (<span id="fc">0</span>)</button>
+  <button class="big alt" id="rst">♻️ پاک کردن فیلترها</button>
+ </div>
+</section>
+<div id="cnt" style="text-align:center;margin-top:16px;opacity:.8"></div>
+<div id="grid"></div>
+<div class="note">⚠️ درصد محبوبیت‌ها برآوردی و بر اساس روند کلی ثبت احوال و فضای عمومی است، نه آمار رسمی دقیق. برای هر اسم در پنجره‌ی جزئیات لینک جستجو و گوگل ترندز هست تا خودتان بررسی کنید.</div>
+<button class="chip" id="mus" title="موسیقی">🎵</button>
+
+<div id="md"><div class="box" id="bx"></div></div>
+
+<script>
+const BG=""; // آدرس یک عکس پس‌زمینه دلخواه (اختیاری)
+const RAW=`آوا|f|ایرانی|ن|هنر|9|u|صدا و آواز
+باران|f|ایرانی|ع|طبیعت|7|s|ریزش رحمت از آسمان
+پرنیا|f|ایرانی|ن|زیبایی|7|u|پارچه‌ی ابریشمی لطیف
+نیایش|f|ایرانی|ن|معنوی|7|u|دعا و راز و نیاز
+ستایش|f|ایرانی|ن|معنوی|8|u|ستودن و تحسین
+یاسمن|f|ایرانی|ع|طبیعت|6|s|گل یاس
+سوگند|f|ایرانی|ع|معنوی|4|s|قسم و عهد
+مهسا|f|ایرانی|ع|نور|6|d|چون ماه
+نازنین|f|ایرانی|ع|زیبایی|5|d|عزیز و دوست‌داشتنی
+فرناز|f|ایرانی|ع|زیبایی|4|d|دارای ناز و شکوه
+شقایق|f|ایرانی|ع|طبیعت|4|s|گل شقایق
+نرگس|f|ایرانی|ع|طبیعت|4|s|گل نرگس
+مهتاب|f|ایرانی|ع|نور|3|s|نور ماه
+کیمیا|f|ایرانی|ع|معنوی|7|s|اکسیر؛ چیز کمیاب و ارزشمند
+هانا|f|خارجی|ن|زیبایی|7|u|شادی و خوشبختی
+ترانه|f|ایرانی|ع|هنر|5|s|آهنگ و سرود
+فروغ|f|ایرانی|ق|نور|2|d|روشنایی و درخشش
+پوران|f|باستانی|ق|شجاعت|2|d|برگرفته از پوراندخت، ملکه‌ی ساسانی
+آرتمیس|f|خارجی|ن|شجاعت|5|u|الهه‌ی ماه و شکار در یونان
+النا|f|خارجی|ن|نور|6|u|درخشان
+ملیکا|f|اسلامی|ن|زیبایی|7|u|ملکه
+آیلین|f|خارجی|ن|نور|7|u|هاله‌ی نورانی ماه (ترکی)
+لیلا|f|اسلامی|ق|زیبایی|4|d|شب؛ نام معشوقه‌ی مجنون
+زهرا|f|اسلامی|ق|معنوی|10|s|درخشان
+فاطمه|f|اسلامی|ق|معنوی|10|s|نام دختر پیامبر
+مریم|f|اسلامی|ق|معنوی|9|s|نام مادر حضرت عیسی
+سارا|f|خارجی|ع|زیبایی|7|s|بانوی شریف
+رز|f|خارجی|ن|طبیعت|5|u|گل سرخ
+نیلوفر|f|ایرانی|ع|طبیعت|5|s|گل آبی نیلوفر
+سپیده|f|ایرانی|ع|نور|5|s|روشنایی بامداد
+آرینا|f|ایرانی|ن|شجاعت|7|u|منسوب به آریا
+ریحانه|f|اسلامی|ع|طبیعت|6|s|گیاه خوشبو
+رها|f|ایرانی|ع|معنوی|5|s|آزاد
+شیدا|f|ایرانی|ع|زیبایی|4|d|عاشق و دلباخته
+آتنا|f|باستانی|ع|شجاعت|7|s|الهه‌ی خرد در یونان
+دیبا|f|ایرانی|ق|زیبایی|2|d|پارچه‌ی ابریشمی
+گلاره|f|ایرانی|ع|طبیعت|3|s|گلِ کوچک
+تارا|f|ایرانی|ع|نور|5|s|ستاره
+محمد|m|اسلامی|ق|معنوی|10|s|ستوده
+علی|m|اسلامی|ق|معنوی|10|s|بلندمرتبه
+امیرعلی|m|اسلامی|ع|معنوی|10|s|امیرِ بلندمرتبه
+آرین|m|ایرانی|ن|شجاعت|8|u|آریایی
+آرمان|m|ایرانی|ع|معنوی|8|s|آرزو
+کیان|m|ایرانی|ع|شجاعت|8|s|منسوب به شاهان کیانی
+پارسا|m|ایرانی|ع|معنوی|8|s|پرهیزکار
+سامان|m|ایرانی|ع|معنوی|6|d|نظم و سر و سامان
+بهراد|m|ایرانی|ع|شجاعت|5|s|نیکو و بخشنده
+فرهاد|m|ایرانی|ع|هنر|4|s|کوه‌کن عاشق داستان خسرو و شیرین
+کامران|m|ایرانی|ع|معنوی|4|d|کامیاب
+رضا|m|اسلامی|ق|معنوی|7|d|خشنودی
+حسین|m|اسلامی|ق|معنوی|9|s|نیکو
+مهدی|m|اسلامی|ق|معنوی|8|s|هدایت‌شده
+یاسین|m|اسلامی|ن|معنوی|9|u|نام سوره‌ای در قرآن
+آریا|m|ایرانی|ن|شجاعت|8|u|آریایی؛ نجیب
+سهند|m|ایرانی|ع|طبیعت|5|s|نام کوهی در آذربایجان
+نیما|m|ایرانی|ع|هنر|5|d|کمان؛ یادآور نیما یوشیج
+بردیا|m|باستانی|ن|شجاعت|6|u|شاهزاده‌ی هخامنشی
+کسری|m|باستانی|ع|شجاعت|4|s|لقب شاهان ساسانی
+پویا|m|ایرانی|ع|معنوی|6|d|پویان و جستجوگر
+مانی|m|باستانی|ع|هنر|5|s|نقاش و پیامبر ایرانی
+آرش|m|باستانی|ع|شجاعت|5|s|تیرانداز اسطوره‌ای
+سینا|m|ایرانی|ع|هنر|7|s|یادآور ابن‌سینا
+امیرحسین|m|اسلامی|ع|معنوی|9|s|امیرِ نیکو
+متین|m|اسلامی|ع|معنوی|7|u|استوار
+ایلیا|m|خارجی|ن|نور|8|u|نامی از سنت ابراهیمی
+کوروش|m|باستانی|ع|شجاعت|5|s|بنیان‌گذار هخامنشیان
+دارا|m|باستانی|ع|شجاعت|5|s|دارنده
+شروین|m|باستانی|ع|شجاعت|4|s|از نام‌های ایرانی باستان
+سپهر|m|ایرانی|ع|نور|5|s|آسمان
+هومن|m|باستانی|ع|معنوی|3|s|اندیشه‌ی نیک
+آدرین|m|خارجی|ن|شجاعت|6|u|منسوب به شهر آدریا
+ایمان|m|اسلامی|ع|معنوی|6|d|باور
+مصطفی|m|اسلامی|ق|معنوی|7|d|برگزیده
+حامد|m|اسلامی|ق|معنوی|4|d|ستایشگر
+جمشید|m|باستانی|ق|شجاعت|2|d|پادشاه اسطوره‌ای
+ایرج|m|باستانی|ق|شجاعت|1|d|فرزند فریدون
+منوچهر|m|باستانی|ق|شجاعت|1|d|از نژاد بهشتی
+اسماعیل|m|اسلامی|ق|معنوی|3|d|نام پیامبر
+ماهان|m|ایرانی|ن|نور|7|u|ماه‌گونه
+رادین|m|ایرانی|ن|شجاعت|6|u|بخشنده و دلیر
+نوید|m|ایرانی|ع|معنوی|4|d|مژده
+شایان|m|ایرانی|ن|شجاعت|6|u|سزاوار
+مبین|m|اسلامی|ن|معنوی|6|u|آشکار`;
+const D=RAW.split('\n').map(l=>{const[n,g,o,e,t,p,r,m]=l.split('|');return{n,g,o,e,t,p:+p,r,m}});
+const EL={ق:'قدیمی',ع:'عرفی (رایج امروز)',ن:'نو'},TR={u:'↗ رو به محبوب شدن',s:'→ ثابت',d:'↘ رو به افول'};
+const F={g:'',o:'',e:'',t:'',p:'',r:'',l:''};
+const G=[['','همه'],['f','👧 دختر'],['m','👦 پسر']];
+const O=['','ایرانی','باستانی','اسلامی','خارجی'].map(x=>[x,x||'همه']);
+const E=[['','همه'],['ق','قدیمی'],['ع','عرفی'],['ن','نو']];
+const T=['','طبیعت','نور','شجاعت','زیبایی','معنوی','هنر'].map(x=>[x,x||'همه']);
+const P=[['','همه'],['1','نادر'],['2','متوسط'],['3','رایج']];
+const R=[['','همه'],['u','↗ در حال رشد'],['s','→ ثابت'],['d','↘ در حال افول']];
+const L=[['','همه'],['s','کوتاه'],['m','متوسط'],['l','بلند']];
+let fav=[];try{fav=JSON.parse(localStorage.getItem('fav')||'[]')}catch(e){}
+const $=id=>document.getElementById(id);
+function mk(id,arr,key){const el=$(id);arr.forEach(([v,t])=>{const b=document.createElement('button');b.className='chip'+(v===''?' on':'');b.textContent=t;b.onclick=()=>{F[key]=v;[...el.children].forEach(c=>c.classList.remove('on'));b.classList.add('on');render()};el.appendChild(b)})}
+mk('fg',G,'g');mk('fo',O,'o');mk('fe',E,'e');mk('ft',T,'t');mk('fp',P,'p');mk('fr',R,'r');mk('fl',L,'l');
+$('lt').oninput=render;
+$('rst').onclick=()=>{Object.keys(F).forEach(k=>F[k]='');$('lt').value='';document.querySelectorAll('.row span').forEach(s=>{[...s.children].forEach((c,i)=>c.classList.toggle('on',i===0))});render()};
+const tier=p=>p<=3?'1':p<=7?'2':'3';
+const lenT=n=>{const c=n.replace(/[آاوی]/g,'').length;return n.length<=3?'s':n.length<=5?'m':'l'};
+function list(){const lt=$('lt').value.trim();return D.filter(d=>(!F.g||d.g===F.g)&&(!F.o||d.o===F.o)&&(!F.e||d.e===F.e)&&(!F.t||d.t===F.t)&&(!F.p||tier(d.p)===F.p)&&(!F.r||d.r===F.r)&&(!F.l||lenT(d.n)===F.l)&&(!lt||d.n.startsWith(lt)))}
+function card(d,i){const c=document.createElement('div');c.className='card '+d.g;c.style.animationDelay=(i%12)*60+'ms';
+ c.innerHTML=`<h3>${d.n}</h3><small>${d.m}</small><span class="tag">${d.o}</span><span class="tag">${EL[d.e].split(' ')[0]}</span><span class="tag">${d.t}</span><div class="bar"><i style="width:${d.p*10}%"></i></div>`;
+ c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${x*22}deg) rotateX(${-y*22}deg) scale(1.04)`};
+ c.onmouseleave=()=>c.style.transform='';c.onclick=()=>open(d);return c}
+function render(arr){arr=Array.isArray(arr)?arr:list();const g=$('grid');g.innerHTML='';arr.forEach((d,i)=>g.appendChild(card(d,i)));$('cnt').textContent=arr.length?arr.length+' اسم پیدا شد':'اسمی با این معیارها پیدا نشد؛ فیلترها را کمی باز کنید.';$('fc').textContent=fav.length}
+function open(d){const q=encodeURIComponent(d.n),isF=fav.includes(d.n);
+ $('bx').innerHTML=`<h2>${d.n}</h2><p style="text-align:center;opacity:.8">${d.g==='f'?'دختر':'پسر'} • ${d.o} • ${EL[d.e]}</p>
+ <p>📖 <b>معنی:</b> ${d.m}</p><p>🏷️ <b>مفهوم:</b> ${d.t}</p>
+ <p>📊 <b>میزان رایج بودن:</b> ${d.p} از ۱۰ — ${TR[d.r]}</p><div class="bar"><i style="width:${d.p*10}%"></i></div>
+ <p id="wk">در حال جستجو در ویکی‌پدیا…</p>
+ <p><a target="_blank" href="https://trends.google.com/trends/explore?geo=IR&q=${q}">گوگل ترندز</a><a target="_blank" href="https://www.google.com/search?q=معنی+اسم+${q}">معنی در گوگل</a><a target="_blank" href="https://fa.wikipedia.org/wiki/${q}">ویکی‌پدیا</a></p>
+ <div class="act"><button class="big" id="fv">${isF?'💔 حذف از علاقه‌مندی':'❤️ افزودن به علاقه‌مندی'}</button><button class="big alt" id="cl">بستن</button></div>`;
+ $('md').classList.add('show');$('cl').onclick=close;
+ $('fv').onclick=()=>{fav=isF?fav.filter(x=>x!==d.n):[...fav,d.n];try{localStorage.setItem('fav',JSON.stringify(fav))}catch(e){}$('fc').textContent=fav.length;close()};
+ fetch('https://fa.wikipedia.org/api/rest_v1/page/summary/'+q).then(r=>r.json()).then(j=>{$('wk').textContent=j.extract?'🌐 '+j.extract.slice(0,260)+'…':'در ویکی‌پدیا توضیحی پیدا نشد.'}).catch(()=>{const w=$('wk');if(w)w.textContent=''})}
+function close(){$('md').classList.remove('show')}
+$('md').onclick=e=>{if(e.target.id==='md')close()};
+$('rnd').onclick=()=>{const a=list();if(a.length)open(a[Math.random()*a.length|0])};
+$('favb').onclick=()=>render(D.filter(d=>fav.includes(d.n)));
+render();
+if(BG)$('bgimg').style.backgroundImage=`url(${BG})`;else $('bgimg').style.background='radial-gradient(circle at 30% 20%,#3a2a8c,transparent 60%),radial-gradient(circle at 80% 80%,#8c2a62,transparent 55%)';
+
+// 3D particles
+const cv=$('cv'),x=cv.getContext('2d');let W,H,mx=0,my=0;const P3=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();onresize=rs;
+for(let i=0;i<170;i++)P3.push({x:Math.random()*2-1,y:Math.random()*2-1,z:Math.random(),h:Math.random()*80+260});
+onmousemove=e=>{mx=e.clientX/W-.5;my=e.clientY/H-.5};
+(function t(){x.clearRect(0,0,W,H);for(const p of P3){p.z-=.0018;if(p.z<=.02)p.z=1;const s=1/p.z,px=W/2+(p.x+mx*.4)*W*.5*s*.5,py=H/2+(p.y+my*.4)*H*.5*s*.5,r=Math.max(.4,2.4/s*s*.6/p.z*.5);x.fillStyle=`hsla(${p.h},90%,75%,${1-p.z})`;x.beginPath();x.arc(px,py,r,0,7);x.fill()}requestAnimationFrame(t)})();
+
+// Ambient music (WebAudio)
+let ac,on=false,tm;
+const CH=[[220,261.6,329.6],[174.6,220,261.6],[261.6,329.6,392],[196,246.9,293.7]];
+function pad(i){const n=ac.currentTime;CH[i%4].forEach(f=>[1,2].forEach(m=>{const o=ac.createOscillator(),g=ac.createGain(),fl=ac.createBiquadFilter();o.type='triangle';o.frequency.value=f*m*(m===2?1.003:1);fl.type='lowpass';fl.frequency.value=900;g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(.035/m,n+2);g.gain.linearRampToValueAtTime(0,n+6.5);o.connect(fl);fl.connect(g);g.connect(ac.destination);o.start(n);o.stop(n+7)}))}
+$('mus').onclick=()=>{if(!on){ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();let i=0;pad(i++);tm=setInterval(()=>pad(i++),5000);on=true;$('mus').classList.add('on')}else{clearInterval(tm);ac.suspend();on=false;$('mus').classList.remove('on')}};
+</script>
+</body>
+</html>
